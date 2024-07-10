@@ -9,6 +9,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="http://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <style>
+        body{
+            background-image: url("Images/back2.png") ;
+            background-size:cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,8 +25,9 @@
 <!-- There are only two methods: get and post -->
             <div class="form-group">
 <!-- "form-group" is Bootstrap class which maintains proper spacing between inputs -->
-             <label for="prjId">Project ID:</label>
-             <input type="text" id="prjId" class="form-control" placeholder="Enter your Project ID">   
+             <span><label for="prjId">Project ID:</label>
+             <label for="prjMsg">(Enter ID to Save, Update/Reset)</label></span>
+             <input type="text" id="prjId" class="form-control" placeholder="Enter your Project ID" onchange="check();">   
             </div>
 
             <div class="form-group">
@@ -44,12 +51,77 @@
             </div>
 
             <div class="form-group">
-                <input type="button" class="btn btn-primary" value="Save">
-                <input type="button" class="btn btn-primary" value="Update">
-                <input type="button" class="btn btn-primary" value="Reset">
+                <input type="button" class="btn btn-primary" value="Save" disabled>
+                <input type="button" class="btn btn-primary" value="Update" disabled>
+                <input type="button" class="btn btn-primary" value="Reset" disabled>
             </div>
         </form>
      </div>
+
+     <script>
+        // $("#prjId").focus();
+ // Above line use jQuery, You can also use jQuery instead of $. It is a shorthand of jQuery.The # symbol indicates that you're selecting an element by its ID.    
+     function validateAndGetFormData(){
+        var prjId    = $("#prjId").val();
+        var prjName  = $("#prjName").val();
+        var asgn     = $("#asgn").val();
+        var asgnDate = $("#asgnDate").val();
+        var dline    = $("#dline").val();
+        if(prjId == ""){
+            alert("Project ID is mandatory");
+            $("#prjId").focus();
+            return;
+        }
+        if(prjName == ""){
+            alert("Project Name is mandatory");
+            $("#prjName").focus();
+            return;
+        }
+        if(asgn == ""){
+            alert("Assigned to is mandatory");
+            $("#asgn").focus();
+            return;
+        }
+        if(asgnDate == ""){
+            alert("Assignment Date is mandatory");
+            $("#asgnDate").focus();
+            return;
+        }
+        if(dline == ""){
+            alert("Deadline is mandatory");
+            $("#dline").focus();
+            return;
+        }
+        var formData = {
+            "prjId": prjId,
+            "prjName": prjName,
+            "asgn": asgn,
+            "asgnDate": asgnDate,
+            "dline": dline
+        };
+        return formData;
+     }
+
+     function check(){
+        var prjId = $("#prjId").val();
+        var readRequest = {
+            "dbName": "project",
+            "tableName": "projectData",
+            "key": {
+                "prjId": prjId
+            }
+        };
+        readFromDB(readRequest, function(response){
+            if(response.status == "NOT_FOUND"){
+                alert("Project ID is available");
+            }else{
+                alert("Project ID is already taken");
+                $("#prjId").val("");
+                $("#prjId").focus();
+            }
+        });
+     }
+     </script>
 </body>
 
 </html>
