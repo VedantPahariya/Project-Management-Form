@@ -10,12 +10,12 @@ Just like storing the Project details, this form can also be used to maintain li
 
 ## How to use?
 
-To use this project, Reader should only know the basic programming. As already mentioned, the code has comments which explains major syntaxs properly which makes it more convinient to read. Follow the following steps to setup the project:  
+To use this project, Reader should only know the basic programming. As already mentioned, the code has comments which explains major syntaxes properly which makes it more convinient to read. Follow the following steps to setup the project:  
 
 1. Set your own Backend DataBase using JSONPowerDB.  
 Go to `http://api.login2explore.com:5577/user/index.html` and make an account to access their API.
 
-2. Go to `Tools` (one of the options in hamburger menu) ->`Tokens`  
+2. Go to `Tools` (one of the options in hamburger menu) ->`Tokens`.  
 Select `Connection Token` as the Type of Token and then `Generate Connection_Tokens`
 
 3. Copy the token and paste it in the variable `connToken` in `index.js` file.
@@ -24,8 +24,8 @@ Now, you are ready to use this repo for your personal use. For checking the data
 Go to `Visualize`-> `JsonDB`. 
 Select the DataBase and then its Relation which are mentioned on 6th and 7th line of the `index.js` file. You can also modify it for your personal convinience.  
 
-You will see Proper Table with the structured data on the screen.
+You will see Proper Table with the structured data on the screen if some data is submitted through the form.
 
 ## Benefits of using JsonPowerDB
 
-JsonPowerDB is easy to use, 
+JsonPowerDB is easy to use because of simple syntax and user friendly graphical user interface.
