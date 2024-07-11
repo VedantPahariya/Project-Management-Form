@@ -5,7 +5,7 @@ Code is Written with proper comments in such a way that any person can read and 
 
 ## About the Form
 
-This form takes 5 inputs from the user that are Project ID, Project Name, Assigned to, Assignment Date and its Deadline. Out of these 5 inputs, Project ID behaves as the primary key which should be unique for different projects. Project ID is the key to retrive/save your project data. Other details are stored under this ID.  
+This form takes 5 inputs from the user that are Project ID, Project Name, Assigned to, Assignment Date and its Deadline. Out of these 5 inputs, Project ID behaves as the primary key which should be unique for different projects. Project ID is the key to retrieve/save your project data. Other details are stored under this ID.  
 Just like storing the Project details, this form can also be used to maintain list of daily tasks that can be either distributed in a group or personal use, for managing tasks, important events, responsibility distribution in groups etc.
 
 ## How to use?
