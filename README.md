@@ -1,5 +1,31 @@
 # Project Management Form
  
-This repository consists of project management form made using HTML, JavaScript and Bootstrap with Backend database using JsonPowerDB. It also uses jQuery.
+This repository consists of code for 'Project Management Form' made using HTML and JavaScript as the main basis with Backend database using JsonPowerDB. It also uses libraries using Bootstrap and jQuery to make the code more simpler and readable. 
+Code is Written with proper comments in such a way that any person can read and understand its working easily.
+
+## About the Form
+
+This form takes 5 inputs from the user that are Project ID, Project Name, Assigned to, Assignment Date and its Deadline. Out of these 5 inputs, Project ID behaves as the primary key which should be unique for different projects. Project ID is the key to retrive/save your project data. Other details are stored under this ID.  
+Just like storing the Project details, this form can also be used to maintain list of daily tasks that can be either distributed in a group or personal use, for managing tasks, important events, responsibility distribution in groups etc.
+
+## How to use?
+
+To use this project, Reader should only know the basic programming. As already mentioned, the code has comments which explains major syntaxs properly which makes it more convinient to read. Follow the following steps to setup the project:  
+
+1. Set your own Backend DataBase using JSONPowerDB.  
+Go to `http://api.login2explore.com:5577/user/index.html` and make an account to access their API.
+
+2. Go to `Tools` (one of the options in hamburger menu) ->`Tokens`  
+Select `Connection Token` as the Type of Token and then `Generate Connection_Tokens`
+
+3. Copy the token and paste it in the variable `connToken` in `index.js` file.
+
+Now, you are ready to use this repo for your personal use. For checking the data stored in DataBase by the form,  
+Go to `Visualize`-> `JsonDB`. 
+Select the DataBase and then its Relation which are mentioned on 6th and 7th line of the `index.js` file. You can also modify it for your personal convinience.  
+
+You will see Proper Table with the structured data on the screen.
 
 ## Benefits of using JsonPowerDB
+
+JsonPowerDB is easy to use, 
