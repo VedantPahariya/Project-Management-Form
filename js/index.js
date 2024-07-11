@@ -89,6 +89,7 @@ function resetForm() {
     $("#Update").prop("disabled", true);
     $("#Reset").prop("disabled", true);
     $("#prjId").prop("disabled", false);
+    $("#Delete").prop("disabled", true);
     $("#prjId").focus();
 }
 
@@ -101,8 +102,7 @@ function saveForm() {
     jQuery.ajaxSetup({ async: false });
     var result = executeCommandAtGivenBaseUrl(PutRequest, jpdbBaseURL, jpdbIML);
     jQuery.ajaxSetup({ async: true });
-    resetForm();
-    $("#prjId").focus();
+    resetForm();    
 }
 
 function updateForm() {
@@ -113,7 +113,6 @@ function updateForm() {
     var result = executeCommandAtGivenBaseUrl(UpdateRequest, jpdbBaseURL, jpdbIML);
     jQuery.ajaxSetup({ async: true });
     resetForm();
-    $("#prjId").focus();
 }
 
 function saveRecNo2LS(result) {
@@ -128,6 +127,16 @@ function fillData(result) {
     $("#asgn").val(data.AssignedTo);
     $("#asgnDate").val(data.AssignedDate);
     $("#dline").val(data.Deadline);
+}
+
+function deleteForm() {
+    var formData = validateAndGetFormData();
+    var DeleteRequest = createREMOVERecordRequest(connToken, prjDBName, prjRelation, localStorage.getItem("recno"));
+    jQuery.ajaxSetup({ async: false });
+    var result = executeCommandAtGivenBaseUrl(DeleteRequest, jpdbBaseURL, jpdbIML);
+    jQuery.ajaxSetup({ async: true });
+    $("#Delete").prop("disabled", true);
+    resetForm();
 }
 
 function check() {
@@ -150,6 +159,7 @@ function check() {
         $("#prjId").prop("disabled", true);
         fillData(result);
         $("#Update").prop("disabled", false);
+        $("#Delete").prop("disabled", false);
     }
     $("#Reset").prop("disabled", false);
     $("#prjName").focus();
