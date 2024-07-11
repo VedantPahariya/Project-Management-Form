@@ -13,7 +13,7 @@ Just like storing the Project details, this form can also be used to maintain li
 To use this project, Reader should only know the basic programming. As already mentioned, the code has comments which explains major syntaxes properly which makes it more convinient to read. Follow the following steps to setup the project:  
 
 1. Set your own Backend DataBase using JSONPowerDB.  
-Go to `http://api.login2explore.com:5577/user/index.html` and login.
+Go to `http://api.login2explore.com:5577/user/index.html` and login.  
 If you don't have an account, then register yourself on `http://api.login2explore.com:5577/user/register_dev.html`.
 Its important to make an account to access their API for Backend DataBase.
 
