@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Management Form </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- above link include the bootstrap stylesheet -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- This is to use jQuery -->
     <script src="http://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <!-- This is to use JPDB library which consists of basic functions to operate with the data -->
     <style>
         body {
             background-image: url("Images/back2.png");
+            /* Sets the background image */
             background-size: cover;
             height: 100vh;
             width: 100vw;
@@ -30,41 +33,51 @@
                 <span><label for="prjId">Project ID:</label>
                     <label for="prjMsg">(Enter ID to Save, Update/Reset)</label></span>
                 <input type="text" id="prjId" class="form-control" placeholder="Enter your Project ID"
-                  onchange="check();" >
+                    onchange="check();">
+                <!-- "form-control is bootstrap class for designing input section" -->
             </div>
 
+            <!-- Input for Project Name -->
             <div class="form-group">
                 <label for="prjName">Project Name:</label>
                 <input type="text" class="form-control" id="prjName" placeholder="Enter the Project Name">
             </div>
 
+            <!-- Input for Assigned to -->
             <div class="form-group">
                 <label for="asgn">Assigned to:</label>
                 <input type="text" id="asgn" class="form-control" placeholder="Enter the Name">
             </div>
 
+            <!-- Input for Assignment Date -->
             <div class="form-group">
                 <label for="asgnDate">Assignment Date:</label>
                 <input type="text" id="asgnDate" class="form-control"
                     placeholder="Enter the Date on which Project was assigned">
             </div>
 
+            <!-- Input for Deadline -->
             <div class="form-group">
                 <label for="dline">Deadline:</label>
                 <input type="text" id="dline" class="form-control"
                     placeholder="Enter the Last Date to Submit the Project">
             </div>
+
+            <!-- Four separate buttons to Save, Update, Reset and Delete-->
             <center>
                 <div>
-                    <input type="button" class="btn btn-primary" id="Save" value="Save"  onclick="saveForm();" disabled>
-                    <input type="button" class="btn btn-primary" id="Update" value="Update" disabled onclick="updateForm();">
-                    <input type="button" class="btn btn-primary" id="Reset" value="Reset" disabled onclick="resetForm();">
-                    <input type="button" class="btn btn-primary" id="Delete" value="Delete" disabled onclick="deleteForm();">
+                    <input type="button" class="btn btn-primary" id="Save" value="Save" onclick="saveForm();" disabled>
+                    <input type="button" class="btn btn-primary" id="Update" value="Update" disabled
+                        onclick="updateForm();">
+                    <input type="button" class="btn btn-primary" id="Reset" value="Reset" disabled
+                        onclick="resetForm();">
+                    <input type="button" class="btn btn-primary" id="Delete" value="Delete" disabled
+                        onclick="deleteForm();">
                 </div>
             </center>
         </form>
     </div>
-<script src="js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

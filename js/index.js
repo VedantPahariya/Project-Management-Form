@@ -7,14 +7,18 @@ var prjDBName = "Project DataBase";
 var prjRelation = "prjData";
 var connToken = "90931725|-31949214324208237|90963679";
 
-// $("#prjId").focus();
-// Above line use jQuery, You can also use jQuery instead of $. It is a shorthand of jQuery.The # symbol indicates that you're selecting an element by its ID.    
+$("#prjId").focus(); // Makes the cursor focus on the Project ID field when the page loads.
+// Above line use jQuery, You can also use 'jQuery' instead of '$'. It is a shorthand of jQuery.The # symbol indicates that you're selecting an element by its ID.    
+
 function validateAndGetFormData() {
     var prjId = $("#prjId").val();
     var prjName = $("#prjName").val();
     var asgn = $("#asgn").val();
     var asgnDate = $("#asgnDate").val();
     var dline = $("#dline").val();
+// The .val() method is primarily used to get the values of form elements such as input, select and textarea.
+// Above lines stores the values of the Project ID, Project Name, Assigned to, Assignment Date and Deadline fields in the respective variables.
+
     if (prjId === "") {
         // Triple Equal signs checks if both the type and values are equal.
         alert("Project ID is mandatory");
@@ -41,6 +45,9 @@ function validateAndGetFormData() {
         $("#dline").focus();
         return "";
     }
+// Above 'if' conditions check if any input field is empty and if it is, it displays an alert message and focuses on the empty field.
+// It is not compulsory to make all the fields mandatory, you can remove the 'if' conditions if you want to make any field optional.
+
     var formData = {
         ProjectID: prjId,
         ProjectName: prjName,
@@ -50,6 +57,8 @@ function validateAndGetFormData() {
     };
     return JSON.stringify(formData);
 }
+// Above function validates the form data and returns the JSON string of the form data.
+
 function createPUTRequest(connToken, jsonObj, dbName, relName) {
     var putRequest = "{\n"
         + "\"token\" : \""
